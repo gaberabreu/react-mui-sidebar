@@ -26,6 +26,10 @@ export default defineConfig({
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "@mui/material": "MUI",
+          "@mui/icons-material": "MUIIcons",
+          "@emotion/react": "EmotionReact",
+          "@emotion/styled": "EmotionStyled",
         },
       },
     },
