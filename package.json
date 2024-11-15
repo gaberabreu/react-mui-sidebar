@@ -1,13 +1,35 @@
 {
-  "name": "react-mui-sidebar",
+  "name": "@gaberabreu/react-mui-sidebar",
   "version": "0.0.0",
   "type": "module",
-  "exports": "./dist/main.js",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "files": [
     "dist"
   ],
+  "keywords": [
+    "typescript",
+    "react",
+    "vite"
+  ],
+  "author": "Gabriel Abreu",
+  "license": "MIT",
+  "homepage": "https://github.com/gaberabreu/react-mui-sidebar#readme",
+  "bugs": {
+    "url": "https://github.com/gaberabreu/react-mui-sidebar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaberabreu/react-mui-sidebar.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint ."
