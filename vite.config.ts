@@ -13,16 +13,13 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/main.ts"),
+      entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
-      input: {
-        main: resolve(__dirname, "src/main.ts"),
-      },
+      external: ["react", "react-dom"],
       output: {
-        entryFileNames: "main.js",
+        entryFileNames: "index.js",
         chunkFileNames: "[name].js",
         assetFileNames: "[name].[ext]",
       },
