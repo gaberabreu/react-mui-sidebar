@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+
 import { resolve } from "path";
 
 import { defineConfig } from "vite";
@@ -9,6 +11,7 @@ export default defineConfig({
     react(),
     dts({
       tsconfigPath: "./tsconfig.app.json",
+      exclude: ["src/setupTests.ts", "**/*.test.tsx"],
     }),
   ],
   build: {
@@ -25,6 +28,15 @@ export default defineConfig({
           "react-dom": "ReactDOM",
         },
       },
+    },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.ts",
+    css: true,
+    coverage: {
+      reporter: ["json", "lcov"],
     },
   },
 });

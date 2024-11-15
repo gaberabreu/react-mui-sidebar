@@ -35,6 +35,9 @@ jobs:
       - name: 🏗️ Build the project
         run: npm run build
 
+      - name: 🧪 Run Tests
+        run: npm run test
+
       - name: 📅 Set version from tag
         run: |
           VERSION=${GITHUB_REF#refs/tags/}
