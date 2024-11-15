@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     dts({
       tsconfigPath: "./tsconfig.app.json",
-      exclude: ["src/setupTests.ts", "**/*.test.tsx"],
+      exclude: ["src/setupTests.ts", "**/*.test.tsx", "**/*.stories.tsx"],
     }),
   ],
   build: {
@@ -34,9 +34,10 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
-    css: true,
     coverage: {
-      reporter: ["json", "lcov"],
+      reporter: ["lcov", "html"],
+      include: ["src"],
+      exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
     },
   },
 });
