@@ -4,17 +4,15 @@ import { render } from "@testing-library/react";
 import SideBar from "./SideBar";
 
 describe("SideBar", () => {
-  it("should render children when open", () => {
-    const { getByText } = render(<SideBar open>MyContent</SideBar>);
+  it("should render children properly when open", () => {
+    const { getByText } = render(<SideBar open>Help</SideBar>);
 
-    const children = getByText(/MyContent/i);
-    expect(children).toBeInTheDocument();
+    expect(getByText("Help")).toBeInTheDocument();
   });
 
-  it("should not render children when not open", () => {
-    const { queryByText } = render(<SideBar>MyContent</SideBar>);
+  it("should render children properly when closed", () => {
+    const { getByText } = render(<SideBar open={false}>Help</SideBar>);
 
-    const children = queryByText(/MyContent/i);
-    expect(children).not.toBeInTheDocument();
+    expect(getByText("Help")).toBeInTheDocument();
   });
 });

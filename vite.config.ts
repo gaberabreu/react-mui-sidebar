@@ -11,7 +11,12 @@ export default defineConfig({
     react(),
     dts({
       tsconfigPath: "./tsconfig.app.json",
-      exclude: ["src/setupTests.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+      exclude: [
+        "src/setupTests.ts",
+        "**/*.test.tsx",
+        "**/*.stories.tsx",
+        "src/components/SideBarContext.ts",
+      ],
     }),
   ],
   build: {
