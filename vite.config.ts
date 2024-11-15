@@ -19,9 +19,13 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
-        entryFileNames: "index.js",
-        chunkFileNames: "[name].js",
-        assetFileNames: "[name].[ext]",
+        entryFileNames: "[name].js",
+        preserveModules: true,
+        preserveModulesRoot: "src",
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
       },
     },
   },
